@@ -1,0 +1,13 @@
+@startuml
+class Boklån {
+    + bok : string
+    + låntagare : string
+    + datum : DateTime
+    + LämnasTillbaka() : DateTime
+    + DagarKvar() : int
+    + SkrivUt() : void
+}
+class Program {
+    {static} Main(args:string[]) : void
+}
+@enduml
