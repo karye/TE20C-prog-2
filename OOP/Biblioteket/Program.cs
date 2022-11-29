@@ -32,7 +32,7 @@ namespace Biblioteket
             Console.WriteLine($"Boken har {DagarKvar()} dagar kvar på lånet");
         }
 
-        // Förläg ett lån
+        // Förläng ett lån
         public void FörlängLån()
         {
             datum.AddDays(30);
