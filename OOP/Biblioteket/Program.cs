@@ -10,6 +10,14 @@ namespace Biblioteket
         public string låntagare;
         public DateTime datum;
 
+        // Konstruktor (Det första som "körs")
+        public Boklån(string b, string l)
+        {
+            bok = b;
+            låntagare = l;
+            datum = DateTime.Now;
+        }
+
         // Klassens metoder
         // När skall boken lämnas tillbaka?
         public DateTime LämnasTillbaka()
@@ -56,13 +64,9 @@ namespace Biblioteket
                 string bokNamn = Console.ReadLine();
                 Console.Write("Ange låntagarens namn: ");
                 string låntagarensNamn = Console.ReadLine();
-                DateTime låneDatum = DateTime.Now;
 
                 // Ett objekt från klassen Boklån
-                Boklån lån = new Boklån();
-                lån.bok = bokNamn;
-                lån.låntagare = låntagarensNamn;
-                lån.datum = låneDatum;
+                Boklån lån = new Boklån(bokNamn, låntagarensNamn);
 
                 // Spara lånet i listan
                 listaLån.Add(lån);
