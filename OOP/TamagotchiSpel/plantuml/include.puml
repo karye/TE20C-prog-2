@@ -1,0 +1,21 @@
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+hide circle
+class Tamagotchi {
+    - hunger : int
+    - boredom : int
+    - words : List<string>
+    - isAlive : bool
+    - generator : Random
+    + name : string
+    + Tamagotchi(name:string)
+    + Feed() : void
+    + Hi() : void
+    + Teach(word:string) : void
+    + Tick() : void
+    + PrintStats() : void
+    + GetAlive() : bool
+    - ReduceBoredom() : void
+}
+@enduml
