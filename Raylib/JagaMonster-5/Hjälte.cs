@@ -27,8 +27,8 @@ namespace JagaMonster_5
         // Ändra position mha piltangenterna
         public void Uppdatera()
         {
-            // Förflyttningsvektor
-            _förflyttning = new Vector2(0, 0);
+            // Nollställ förflyttningsvektor
+            _förflyttning = Vector2.Zero;
 
             // Lyssna på tangenter
             // Om pil vänster/höger/upp/ned då flytta
