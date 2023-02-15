@@ -38,6 +38,9 @@ namespace MoonLander_2
             }
             else
             {
+                // Så länge vi faller
+                Input();
+
                 // Minskar höjden när den faller
                 _höjd -= _hastighet;
 
@@ -65,6 +68,31 @@ namespace MoonLander_2
             else
             {
                 return false;
+            }
+        }
+
+        // Metod att hantera input från tangentbordet
+        public void Input()
+        {
+            // Om tryck på vänsterpil
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))
+            {
+                // Flytta landaren till vänster
+                _position.X -= 1;
+            }
+
+            // Om tryck på högerpil
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_RIGHT))
+            {
+                // Flytta landaren till höger
+                _position.X += 1;
+            }
+
+            // Om tryck på mellanslag
+            if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
+            {
+                // Köra raketmotorn
+                _hastighet -= 0.05f;
             }
         }
     }
