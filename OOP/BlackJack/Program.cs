@@ -9,20 +9,17 @@ namespace BlackJack
         {
             Console.WriteLine("Välkommen till Black Jack!");
 
-            // Testa att skapa ett kort
-            Kort hjärterFem = new Kort(5, Färgtyp.hjärter);
-            Kort hjärterNio = new Kort(9, Färgtyp.hjärter);
+            // Testa kortleken
+            // 1. Skapa en tom kortlek
+            Kortlek kortlek = new Kortlek();
 
-            // Samla Kort i en List
-            List<Kort> hand = new List<Kort>();
-            hand.Add(hjärterFem);
-            hand.Add(hjärterNio);
+            // 2. Fyll med kort
+            kortlek.SkapaKortlek();
 
-            // Skriva ut poängen
-            // För varje kort
-            foreach (var kort in hand)
+            // Hur månfa finns det?
+            foreach (var kort in kortlek.GeKortlek())
             {
-                Console.WriteLine($"Kortets värde är: {kort.TillText()}");
+                Console.WriteLine(kort.TillText());
             }
         }
     }

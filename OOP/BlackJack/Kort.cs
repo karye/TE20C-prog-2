@@ -14,12 +14,11 @@ namespace BlackJack
     public class Kort
     {
         // Interna variablerna
-        // Kortets värde
+        // Kortets värde 1(Ess), 2-10, 11 (Knekt), 12 (Dam), 13 (Kung)
         private int _värde;
+
         // Kortets färg: hjärter, ruter, spader, klöver
         private Färgtyp _färg;
-        // Kortets värde i Black Jack
-        private int _värdeBlackJack;
 
         // Metoderna
         // Konstruktor: den som skapar själva kortet
@@ -30,10 +29,26 @@ namespace BlackJack
         }
 
         // Ge ut Black Jack värdet
-/*         public int VärdeBlackJack()
+        public int VärdeBlackJack()
         {
-            return värde;
-        } */
+            // Om Ess = 1 eller 11
+            // 2-10 = 2-10
+            // Kk, D, K = 10
+
+            switch (_värde)
+            {
+                case 1:         // Ess 1 @TODO kan vara 11
+                    return 1;   
+                case 11:        // Knekt
+                    return 10;  
+                case 12:        // Dam
+                    return 10;  
+                case 13:        // Kung
+                    return 10;  
+                default:        // 2-10
+                    return _värde;
+            }
+        }
 
         // Kortets värde och färg som text
         public string TillText()
