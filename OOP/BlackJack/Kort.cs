@@ -75,7 +75,7 @@ namespace BlackJack
             {
                 kortText = _värde.ToString();
             }
-            return kortText;
+            return _färg + " " + kortText;
         }
     }
 }

@@ -16,11 +16,21 @@ namespace BlackJack
             // 2. Fyll med kort
             kortlek.SkapaKortlek();
 
-            // Hur månfa finns det?
-            foreach (var kort in kortlek.GeKortlek())
-            {
-                Console.WriteLine(kort.TillText());
-            }
+            // 3. Blanda korten
+            kortlek.BlandaKortlek();
+
+            // Dra ett kort
+            Kort kort = kortlek.DraKort();
+            Console.WriteLine(kort.TillText());
+
+            // Skapa en spelare
+            Spelare spelaren = new Spelare("Kalle");
+
+            // Ge spelare kortet som vi dragit
+            spelaren.TaEmotKort(kort);
+
+            // Hur många poäng har spelaren?
+            Console.WriteLine($"{spelaren.Poäng()} poäng");
         }
     }
 }
