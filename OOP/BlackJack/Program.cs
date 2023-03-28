@@ -9,28 +9,42 @@ namespace BlackJack
         {
             Console.WriteLine("Välkommen till Black Jack!");
 
-            // Testa kortleken
-            // 1. Skapa en tom kortlek
-            Kortlek kortlek = new Kortlek();
+            // Skapa spelaren och dealern
+            Console.Write("Vad heter du? ");
+            string namn = Console.ReadLine();
+            Spelare spelare1 = new Spelare(namn);
+            Dealer dealer = new Dealer();
 
-            // 2. Fyll med kort
+            // Skapa en kortlek med 52 kort
+            Kortlek kortlek = new Kortlek();
             kortlek.SkapaKortlek();
 
-            // 3. Blanda korten
+            // Blanda korten
             kortlek.BlandaKortlek();
 
-            // Dra ett kort
-            Kort kort = kortlek.DraKort();
-            Console.WriteLine(kort.TillText());
+            // Ge två kort till spelaren 
+            Kort kort1 = kortlek.DraKort();
+            Kort kort2 = kortlek.DraKort();
+            spelare1.TaEmotKort(kort1);
+            spelare1.TaEmotKort(kort2);
 
-            // Skapa en spelare
-            Spelare spelaren = new Spelare("Kalle");
+            Console.WriteLine("Du får två kort: ");
+            Console.WriteLine("-" + kort1.TillText());
+            Console.WriteLine("-"+ kort2.TillText());
+            Console.WriteLine("Din poängsumma är " + spelare1.Poäng());
 
-            // Ge spelare kortet som vi dragit
-            spelaren.TaEmotKort(kort);
+            // .. och två kort till dealern
+            // Ett av dealerns kort ska vara öppet
+            kort1 = kortlek.DraKort();
+            kort2 = kortlek.DraKort();
+            dealer.TaEmotKort(kort1);
+            dealer.TaEmotKort(kort2);
 
-            // Hur många poäng har spelaren?
-            Console.WriteLine($"{spelaren.Poäng()} poäng");
+            Console.WriteLine("Dealerns första kort är:");
+            Console.WriteLine("-" + kort1.TillText());
+
+            // Spelaren får välja att dra kort eller stanna. Om spelaren stannar, går turen vidare till dealern.
+            
         }
     }
 }

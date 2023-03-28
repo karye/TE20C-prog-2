@@ -7,7 +7,7 @@ namespace BlackJack
     {
         // Interna variabler
         private string _namn;
-        private List<Kort> _hand;
+        private List<Kort> _hand = new List<Kort>();
         private int _poäng;
 
         // Konstruktorn
@@ -25,7 +25,7 @@ namespace BlackJack
         }
 
         // Summa av BlackJack-poängen för alla kort
-        public int Poäng()
+        public virtual int Poäng()
         {
             return _poäng;
         }
