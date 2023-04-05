@@ -15,6 +15,7 @@ namespace Shmup
             // Skapa fönstret
             Raylib.InitWindow(800, 600, "Raylib");
             Raylib.SetTargetFPS(60);
+            Raylib.InitAudioDevice();
             
             // Skapar objekten
             Skepp spelare = new Skepp(@"resurser/space.png");
